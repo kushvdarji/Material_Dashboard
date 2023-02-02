@@ -243,14 +243,14 @@ function update() {
                   )}
                   <br />
                   <TextField
-                    type="password"
+                    type="text"
                     label="Password"
                     name="password"
                     variant="standard"
                     className="kush"
                     value={password || ""}
                     onChange={handleInputChange}
-                    onKeyDown={(e) => downkey.includes(e.key) && e.preventDefault()}
+                    // onKeyDown={(e) => downkey.includes(e.key) && e.preventDefault()}
                   />
                   <br />
                   {error1 || password.length > 10 ? (

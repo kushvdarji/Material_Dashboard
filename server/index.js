@@ -4,12 +4,10 @@ const cors = require("cors");
 var session = require("express-session");
 session = require("express-session");
 var nodemailer = require("nodemailer");
-// var bodyparser = require("body-parser");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-// app.use(bodyparser.urlencoded({ extended: true }));
 
 const db = mysql.createConnection({
   user: "root",
@@ -152,7 +150,7 @@ app.post("/otpverify", (req, res) => {
           }
         }
       }
-    );
+    );    
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "something went wrong" });
@@ -208,7 +206,7 @@ app.put("/api/put/:id", (req, res) => {
 
 app.get("/table/get",(req,res)=>{
   db.query("SELECT * FROM `Table`",(error,result)=>{
-    console.log(result);
+    // console.log(result);
     res.send(result)
   })
 })

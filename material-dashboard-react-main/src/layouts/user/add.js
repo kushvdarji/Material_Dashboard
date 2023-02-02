@@ -269,7 +269,7 @@ function add() {
                     // style={{ marginTop: "35px" }}
                     value={pass}
                     onChange={(e) => handlePassChange(e)}
-                    onKeyDown={(e) => downkey.includes(e.key) && e.preventDefault()}
+                    // onKeyDown={(e) => downkey.includes(e.key) && e.preventDefault()}
                   />
                   <br />
                   {error || pass.length > 10 ? (

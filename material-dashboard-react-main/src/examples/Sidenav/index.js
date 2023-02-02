@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useEffect } from "react";
 
 // react-router-dom components
-import { useLocation, NavLink, Link } from "react-router-dom";
+import { useLocation, NavLink, Link, useNavigate } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -139,9 +139,9 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
     return returnValue;
   });
-
+  const navigate = useNavigate();
   const handleLogout = () => {
-    window.confirm("Are You Sure You Want To LogOut");
+    navigate("/authentication/sign-in");
   };
 
   return (
@@ -184,19 +184,19 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       />
       <List>{renderRoutes}</List>
       <MDBox p={2} mt="auto">
-        <Link to="/authentication/sign-in">
-          <MDButton
-            type="button"
-            target="_blank"
-            // rel="noreferrer"
-            variant="gradient"
-            color={sidenavColor}
-            fullWidth
-            onClick={handleLogout}
-          >
-            Log Out
-          </MDButton>
-        </Link>
+        {/* <Link to="/authentication/sign-in"> */}
+        <MDButton
+          type="button"
+          target="_blank"
+          // rel="noreferrer"
+          variant="gradient"
+          color={sidenavColor}
+          fullWidth
+          onClick={handleLogout}
+        >
+          Log Out
+        </MDButton>
+        {/* </Link> */}
       </MDBox>
     </SidenavRoot>
   );

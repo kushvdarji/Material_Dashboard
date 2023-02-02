@@ -85,7 +85,7 @@ function Basic() {
       });
     }
   };
-  const downkey = ["e", "E", "+", "-", "."];
+  // const downkey = ["e", "E", "+", "-", "."];
   const exceptThisSymbols = [
     "1",
     "2",
@@ -199,7 +199,7 @@ function Basic() {
               className="kush"
               value={pass}
               onChange={(e) => handlePassChange(e)}
-              onKeyDown={(e) => downkey.includes(e.key) && e.preventDefault()}
+              // onKeyDown={(e) => downkey.includes(e.key) && e.preventDefault()}
             />
             <br />
             {error || pass.length > 10 ? (
