@@ -141,7 +141,11 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   });
   const navigate = useNavigate();
   const handleLogout = () => {
-    navigate("/authentication/sign-in");
+    const kush = window.confirm("Are You Sure");
+    if (kush) {
+      navigate("/authentication/sign-in");
+    }
+    console.log(kush);
   };
 
   return (
