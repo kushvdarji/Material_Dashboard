@@ -70,7 +70,7 @@ app.post("/register", (req, res) => {
 
         var mailOptions = {
           from: "kushvdarji@gmail.com",
-          to: "kushvdarji@gmail.com",
+          to: email,
           subject: "For OTP",
           text:
             "Your OTP for verification is : " +
